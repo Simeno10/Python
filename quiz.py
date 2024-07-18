@@ -4,7 +4,7 @@ def new_game():
     question_num=1
 
     for key in questions:
-        print("------------------------")
+        print("-----------------------")
         print(key)
         for i in options[question_num-1]:
             print(i)
@@ -21,9 +21,9 @@ def check_answer(answer, guess):
         print("ŹLE!")
         return 0
 def check_score(correct_guesses, guesses):
-    print("------------------------")
+    print("-----------------------")
     print("WYNIKI:")
-    print("------------------------")
+    print("-----------------------")
     print("Pytania", end=" ")
     for i in questions:
         print(questions.get(i), end=" ")
