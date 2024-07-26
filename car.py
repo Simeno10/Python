@@ -12,3 +12,9 @@ class Car:
         print("This "+self.make+" "+self.model+" is driving")
     def stop(self):
         print("This car is stopped")
+
+class Electric(Car):
+    def battery(self):
+        print("Battery 100%")
+class Hybrid(Car):
+    pass
