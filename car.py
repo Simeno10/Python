@@ -17,4 +17,9 @@ class Electric(Car):
     def battery(self):
         print("Battery 100%")
 class Hybrid(Car):
-    pass
+    def hybrid(self):
+        print("This is hybrid car")
+
+class Ford(Hybrid):
+    def ford(self):
+        print("This Ford is hybrid car")
