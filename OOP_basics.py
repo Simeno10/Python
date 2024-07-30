@@ -1,5 +1,7 @@
 from car import Car
 from car import Electric
+from car import Hybrid
+from car import Ford
 
 car_1 = Car("Porsche","911", 2021, "blue")
 car_2 = Car("Ferrari","F355", 1998, "red")
@@ -18,3 +20,8 @@ print(car_1.wheels)
 car2 = Electric("Nissan","Qashqai", 2012, "orange")
 print(car2.wheels)
 car2.battery()
+
+ford = Ford("Ford","Focus", 2024, "yellow")
+print(ford.wheels)
+ford.hybrid()
+ford.ford()
