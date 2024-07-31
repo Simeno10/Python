@@ -3,6 +3,25 @@ from car import Electric
 from car import Hybrid
 from car import Ford
 
+
+class Prey:
+
+    def flee(self):
+        print("This animal flees")
+class Predator:
+
+    def hunt(self):
+        print("This animal is hunting")
+
+class Fish(Prey, Predator):
+    pass
+
+fish=Fish()
+
+fish.hunt()
+fish.flee()
+
+
 car_1 = Car("Porsche","911", 2021, "blue")
 car_2 = Car("Ferrari","F355", 1998, "red")
 
