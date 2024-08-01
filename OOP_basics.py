@@ -14,7 +14,8 @@ class Predator:
         print("This animal is hunting")
 
 class Fish(Prey, Predator):
-    pass
+    def hunt(self):
+        print("This fish is junting")
 
 fish=Fish()
 
@@ -39,6 +40,11 @@ print(car_1.wheels)
 car2 = Electric("Nissan","Qashqai", 2012, "orange")
 print(car2.wheels)
 car2.battery()
+
+ford = Ford("Ford","Focus", 2024, "yellow")
+print(ford.wheels)
+ford.hybrid()
+ford.ford()
 
 ford = Ford("Ford","Focus", 2024, "yellow")
 print(ford.wheels)
