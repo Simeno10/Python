@@ -8,19 +8,22 @@ class Prey:
 
     def flee(self):
         print("This animal flees")
+        return self
 class Predator:
 
     def hunt(self):
         print("This animal is hunting")
+        return self
 
 class Fish(Prey, Predator):
     def hunt(self):
-        print("This fish is junting")
+        print("This fish is hunting")
+        return self
 
 fish=Fish()
 
-fish.hunt()
-fish.flee()
+fish.hunt()\
+    .flee()
 
 
 car_1 = Car("Porsche","911", 2021, "blue")
@@ -40,11 +43,6 @@ print(car_1.wheels)
 car2 = Electric("Nissan","Qashqai", 2012, "orange")
 print(car2.wheels)
 car2.battery()
-
-ford = Ford("Ford","Focus", 2024, "yellow")
-print(ford.wheels)
-ford.hybrid()
-ford.ford()
 
 ford = Ford("Ford","Focus", 2024, "yellow")
 print(ford.wheels)
