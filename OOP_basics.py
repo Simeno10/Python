@@ -9,6 +9,7 @@ class Prey:
     def flee(self):
         print("This animal flees")
         return self
+        
 class Predator:
 
     def hunt(self):
