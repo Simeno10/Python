@@ -1,9 +1,3 @@
-from car import Car
-from car import Electric
-from car import Hybrid
-from car import Ford
-
-
 class Prey:
     def __init__(self, length, width):
         self.length = length
@@ -65,3 +59,8 @@ ford = Ford("Ford","Focus", 2024, "yellow")
 print(ford.wheels)
 ford.hybrid()
 ford.ford()
+car_1.go()
+car_1.stop()
+motorcycle = Motorcycle()
+motorcycle.go()
+motorcycle.stop()
