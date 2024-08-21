@@ -1,6 +1,21 @@
-class Car:
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def go(self):
+        pass
+    @abstractmethod
+    def stop(self):
+        pass
+
+class Car(Vehicle):
 
     wheels = 4  #class variable
+
+    def go(self):
+        print("You drive the car.")
+    def stop(self):
+        print("This car is stopped.")
 
     def __init__(self,make,model,year,color):
         self.make = make    #instance variable
@@ -23,3 +38,10 @@ class Hybrid(Car):
 class Ford(Hybrid):
     def ford(self):
         print("This Ford is hybrid car")
+
+class Motorcycle(Vehicle):
+    def go(self):
+        print("You drive the motorcycle.")
+
+    def stop(self):
+        print("This motorcycle is stopped.")
