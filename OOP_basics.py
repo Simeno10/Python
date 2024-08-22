@@ -1,3 +1,11 @@
+from car import Car
+from car import Electric
+from car import Hybrid
+from car import Ford
+from car import Vehicle
+from car import Motorcycle
+
+
 class Prey:
     def __init__(self, length, width):
         self.length = length
@@ -27,6 +35,9 @@ class Rabbit(Prey):
         self.height = height
     def volume(self):
         return self.length*self.width*self.height
+
+def change_color(object, color):
+    object.color=color
 
 fish=Fish(3,4)
 rabbit=Rabbit(2,3,5)
@@ -64,3 +75,6 @@ car_1.stop()
 motorcycle = Motorcycle()
 motorcycle.go()
 motorcycle.stop()
+print(ford.color)
+change_color(ford, "green")
+print(ford.color)
