@@ -78,3 +78,7 @@ motorcycle.stop()
 print(ford.color)
 change_color(ford, "green")
 print(ford.color)
+
+foods = list()
+while food := input("What food do you like?: ") != "quit":
+    foods.append(food)
