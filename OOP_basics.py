@@ -38,6 +38,8 @@ class Rabbit(Prey):
 
 def change_color(object, color):
     object.color=color
+def funkcja():
+    print("Elo")
 
 fish=Fish(3,4)
 rabbit=Rabbit(2,3,5)
@@ -82,3 +84,7 @@ print(ford.color)
 foods = list()
 while food := input("What food do you like?: ") != "quit":
     foods.append(food)
+x=funkcja
+y=print
+x()
+y("Cześć")
