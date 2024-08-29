@@ -40,11 +40,23 @@ def change_color(object, color):
     object.color=color
 def funkcja():
     print("Elo")
+def loud(text):
+    return text.upper()
+def quiet(text):
+    return text.lower()
+def hello(func):
+    print(func("Hello"))
+def divisor(x):
+    def dividend(y):
+        return y / x
+    return dividend
 
 fish=Fish(3,4)
 rabbit=Rabbit(2,3,5)
 print(fish.area())
 print(rabbit.volume())
+elo = divisor(2)(10)
+print(elo)
 
 fish.hunt()\
     .flee()
@@ -88,3 +100,5 @@ x=funkcja
 y=print
 x()
 y("Cześć")
+hello(loud)
+hello(quiet)
