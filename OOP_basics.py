@@ -5,6 +5,7 @@ from car import Ford
 from car import Vehicle
 from car import Motorcycle
 
+
 class Prey:
     def __init__(self, length, width):
         self.length = length
@@ -101,3 +102,14 @@ x()
 y("Cześć")
 hello(loud)
 hello(quiet)
+
+students = (("Marek","F",14),
+            ("Hela","A",25),
+            ("Igor", "C",19),
+            ("Maria","D",44))
+wiek = lambda roczniki:roczniki[2]
+ocena = lambda oceny:oceny[1]
+#students.sort(key=wiek, reverse=True)
+sorted_students = sorted(students, key=ocena)
+for i in sorted_students:
+    print(i)
