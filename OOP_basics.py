@@ -113,3 +113,8 @@ ocena = lambda oceny:oceny[1]
 sorted_students = sorted(students, key=ocena)
 for i in sorted_students:
     print(i)
+print("////////////////////////\n")
+wiek_pelnoletni = lambda roczniki:roczniki[2] >=18
+drinking_buddies = list(filter(wiek_pelnoletni, sorted_students))
+for i in drinking_buddies:
+    print(i)
