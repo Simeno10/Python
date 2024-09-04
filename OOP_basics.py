@@ -94,8 +94,8 @@ change_color(ford, "green")
 print(ford.color)
 
 foods = list()
-while food := input("What food do you like?: ") != "quit":
-    foods.append(food)
+#while food := input("What food do you like?: ") != "quit":
+#    foods.append(food)
 x=funkcja
 y=print
 x()
@@ -118,3 +118,20 @@ wiek_pelnoletni = lambda roczniki:roczniki[2] >=18
 drinking_buddies = list(filter(wiek_pelnoletni, sorted_students))
 for i in drinking_buddies:
     print(i)
+people_age = {'Marek':32, 'Jadzia':18, 'Erenest':90, 'Kilian':45}
+people_months = {key: value*12 for (key, value) in people_age.items()}
+people_older = {key: value for (key, value) in people_age.items() if value>40}
+people_good = {key: ("YOUNG" if value<40 else "OLD") for (key, value) in people_age.items()}
+print(people_months)
+print(people_older)
+print(people_good)
+def func(value):
+    if value==45:
+        return "45 lat minęło!"
+    elif value>45:
+        return "STARY!"
+    else:
+        return "YOUNGBOY!"
+
+people_func = {key: func(value) for (key, value) in people_age.items()}
+print(people_func)
