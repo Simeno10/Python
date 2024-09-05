@@ -1,9 +1,14 @@
+import time
+
+import car
+import threading
 from car import Car
 from car import Electric
 from car import Hybrid
 from car import Ford
 from car import Vehicle
 from car import Motorcycle
+from multiprocessing import Process, cpu_count
 
 
 class Prey:
@@ -50,6 +55,23 @@ def divisor(x):
     def dividend(y):
         return y / x
     return dividend
+def sleep():
+    time.sleep(2)
+    print("sleep")
+def coffe():
+    time.sleep(3)
+    print("drink cawfee")
+def eat():
+    time.sleep(4)
+    print("yummy")
+def timer():
+    print()
+    count = 0
+    while True:
+        time.sleep(1)
+        count += 1
+        print("logged in for: ",count," seconds")
+
 
 fish=Fish(3,4)
 rabbit=Rabbit(2,3,5)
@@ -135,3 +157,22 @@ def func(value):
 
 people_func = {key: func(value) for (key, value) in people_age.items()}
 print(people_func)
+xxx = threading.Thread(target=eat, args=())
+xxx.start()
+yyy = threading.Thread(target=coffe, args=())
+yyy.start()
+zzz = threading.Thread(target=sleep, args=())
+zzz.start()
+xxx.join()
+yyy.join()
+zzz.join()
+hhh = threading.Thread(target=timer, daemon=True)
+hhh.start()
+
+#hhh.setDaemon(True)
+#print(hhh.isDaemon())
+
+answer = input("Do you wish toe exit?\n")
+print(threading.active_count())
+print(threading.enumerate())
+print(time.perf_counter())
