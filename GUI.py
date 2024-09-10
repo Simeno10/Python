@@ -13,9 +13,35 @@ def delete():
     entry.delete(0,END)
 def backspace():
     entry.delete(len(entry.get())-1,END)
+def display():
+    if(x.get()==1):
+        print("You agree")
+    else:
+        print("You disagree")
 
 window = Tk()
 icon = PhotoImage(file='icon.png')
+icon2 = PhotoImage(file='icon2.png')
+
+x=BooleanVar()
+
+check_button = Checkbutton(window,
+                           text="I agree",
+                           variable=x,
+                           onvalue=True,
+                           offvalue=False,
+                           command=display,
+                           font=("Arial",20),
+                           fg="green",
+                           bg="black",
+                           activebackground="yellow",
+                           activeforeground="red",
+                           padx=25,
+                           pady=10,
+                           image=icon2,
+                           compound='left',
+                           )
+check_button.pack()
 
 entry = Entry(window,
               font=("Arial", 50),
