@@ -18,12 +18,78 @@ def display():
         print("You agree")
     else:
         print("You disagree")
+def order():
+    if (x.get() == 0):
+        print("You ordered pizza!")
+    elif (x.get() == 1):
+        print("You ordered burger!")
+    elif (x.get() == 2):
+        print("You ordered sushi!")
+    else:
+        print("wtf man :{")
+def submit2():
+    food = []
+    for index in listbox.curselection():
+        food.insert(index, listbox.get(index))
+    print("You have ordered: ")
+    for index in food:
+        print(index)
+def add():
+    listbox.insert(listbox.size(),entryBox.get())
+    listbox.config(height=listbox.size())
+
+def delete2():
+    for index in reversed(listbox.curselection()):
+        listbox.delete(index)
+    listbox.config(height=listbox.size())
 
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
+
+
+listbox = Listbox(window,
+                  bg="black",
+                  fg="yellow",
+                  font=("Constantia",20),
+                  width=12,
+                  selectmode=MULTIPLE)
+listbox.pack()
+listbox.insert(1,"pizza")
+listbox.insert(2,"hotdog")
+listbox.insert(3,"salami")
+
+listbox.config(height=listbox.size())
+
+entryBox = Entry(window)
+entryBox.pack()
+
+submitButton = Button(window,text="submit", command=submit2)
+submitButton.pack()
+
+addButton = Button(window,text="add", command=add)
+addButton.pack()
+
+deleteButton = Button(window,text="delete", command=delete2)
+deleteButton.pack()
+
+food = ["pizza", "burger", "sushi"]
+foodImages = [PhotoImage(file='pizza.png'),PhotoImage(file='burger2.png'),PhotoImage(file='sushi.png')]
+for i in range(len(food)):
+    radiobutton = Radiobutton(window,
+                              text=food[i],
+                              variable=x,
+                              value=i,
+                              padx=25,
+                              font=("Impact", 50),
+                              image=foodImages[i],
+                              compound='left',
+                              indicatoron=0,
+                              width=375,
+                              command=order)
+    radiobutton.pack(anchor = W)
 
 check_button = Checkbutton(window,
                            text="I agree",
@@ -39,7 +105,7 @@ check_button = Checkbutton(window,
                            padx=25,
                            pady=10,
                            image=icon2,
-                           compound='left',
+                           compound='left'
                            )
 check_button.pack()
 
@@ -73,19 +139,19 @@ button.pack()
 window.title("Yoooo first GUI")
 
 
-label = Label(window,
-              text="Yoooo hello guys",
-              font=('Arial',40,'bold'),
-              fg='#eb4034',
-              bg='#2a8c41',
-              relief=SUNKEN,
-              bd=10,
-             padx=20,
-              pady=20,
-              image=icon,
-              compound='bottom')
-label.pack()
-label.place(x=210, y=210)
+#label = Label(window,
+#              text="Yoooo hello guys",
+#              font=('Arial',40,'bold'),
+#              fg='#eb4034',
+#              bg='#2a8c41',
+#              relief=SUNKEN,
+#             bd=10,
+#             padx=20,
+#              pady=20,
+#              image=icon,
+#              compound='bottom')
+#label.pack()
+#label.place(x=210, y=210)
 
 
 window.iconphoto(True,icon)
