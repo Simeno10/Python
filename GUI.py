@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 count = 0
 def click():
@@ -42,13 +43,39 @@ def delete2():
     for index in reversed(listbox.curselection()):
         listbox.delete(index)
     listbox.config(height=listbox.size())
-
+def click2():
+    #messagebox.showinfo(title='this is messagebox', message='You are a person')
+    #messagebox.showwarning(title='WARNING', message='You have a virus!')
+    #messagebox.showerror(title='ERROR', message='Something went wrong')
+    #if messagebox.askokcancel(title='ask ok cancel', message='You want to do  it?'):
+     #   print("yes, ok")
+    #else:
+     #   print("ok, cancel")
+    #if messagebox.askretrycancel(title='ask ok cancel', message='You want to retry it?'):
+     #   print("yes, ok, you retried")
+    #else:
+     #   print("ok, cancel")
+    #if messagebox.askyesno(title="ask yes or no" ,message="Do you like cake?"):
+     #   print("You like it")
+    #else:
+     #   print("You dont like it")
+    #answer = messagebox.askquestion(title="Tell me", message="You like coding?")
+    #print(answer)
+    answer = messagebox.askyesnocancel(title="Tell me", message="You are fan of Star wars?", icon = 'warning')
+    if (answer == True):
+        print("Me too! :>")
+    elif (answer == False):
+        print("You motha! :<")
+    else:
+        print("You dodged! :/")
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
 
+button = Button(window, command=click2, text='click me')
+button.pack()
 
 listbox = Listbox(window,
                   bg="black",
