@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+from tkinter import colorchooser
 
 count = 0
 def click():
@@ -68,13 +69,17 @@ def click2():
         print("You motha! :<")
     else:
         print("You dodged! :/")
+def click3():
+
+    window.config(bg=colorchooser.askcolor()[1])
+
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
 
-button = Button(window, command=click2, text='click me')
+button = Button(window, command=click3, text='click me')
 button.pack()
 
 listbox = Listbox(window,
