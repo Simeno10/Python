@@ -72,6 +72,9 @@ def click2():
 def click3():
 
     window.config(bg=colorchooser.askcolor()[1])
+def submit3():
+    input = text.get("1.0", END)
+    print(input)
 
 window = Tk()
 icon = PhotoImage(file='icon.png')
@@ -79,7 +82,17 @@ icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
 
-button = Button(window, command=click3, text='click me')
+text = Text(window,
+            bg="light yellow",
+            font=("Ink Free", 25),
+            height=8,
+            width=20,
+            padx=20,
+            pady=20,
+            fg="purple")
+text.pack()
+
+button = Button(window, command=submit3, text='click me')
 button.pack()
 
 listbox = Listbox(window,
