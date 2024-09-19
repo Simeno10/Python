@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import colorchooser
+from tkinter import filedialog
 
 count = 0
 def click():
@@ -75,12 +76,24 @@ def click3():
 def submit3():
     input = text.get("1.0", END)
     print(input)
+def openFile():
+    filepath = filedialog.askopenfilename(initialdir="C:\\Users\\adamm\\PycharmProjects\\helloWorld",
+                                          title="You opened file man",
+                                          filetypes=(("text files", "*.txt"),
+                                          ("all files", "*.*")))
+    file = open(filepath, 'r')
+    print(file.read())
+    file.close()
+
 
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
+
+button23 = Button(window, command=openFile, text='Open')
+button23.pack()
 
 text = Text(window,
             bg="light yellow",
