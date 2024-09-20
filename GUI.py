@@ -84,6 +84,20 @@ def openFile():
     file = open(filepath, 'r')
     print(file.read())
     file.close()
+def saveFile():
+    file = filedialog.asksaveasfile(initialdir="C:\\Users\\adamm\\PycharmProjects\\helloWorld",
+                                    defaultextension='.txt',
+                                    filetypes=[
+                                        ("Text file", ".txt"),
+                                        ("HTML file", ".html"),
+                                        ("All files", ".*")
+                                    ])
+    if file is None:
+        return 
+    filetext = str(text.get(1.0, END))
+    #filetext = input("Write something: ")
+    file.write(filetext)
+    file.close()
 
 
 window = Tk()
@@ -92,7 +106,7 @@ icon2 = PhotoImage(file='icon2.png')
 
 x=BooleanVar()
 
-button23 = Button(window, command=openFile, text='Open')
+button23 = Button(window, command=saveFile, text='save')
 button23.pack()
 
 text = Text(window,
