@@ -3,8 +3,6 @@ from tkinter import messagebox
 from tkinter import colorchooser
 from tkinter import filedialog
 
-
-
 count = 0
 def click():
     global count
@@ -95,19 +93,40 @@ def saveFile():
                                         ("All files", ".*")
                                     ])
     if file is None:
-        return 
+        return
     filetext = str(text.get(1.0, END))
     #filetext = input("Write something: ")
     file.write(filetext)
     file.close()
+def cut():
+    print("You cut some text")
+def copy():
+    print("You copied some text")
+def paste():
+    print("You pasted some text")
 
 
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
+saveImage = PhotoImage(file='save.png')
+openImage = PhotoImage(file='open.png')
 
 x=BooleanVar()
 
+menubar = Menu(window)
+window.config(menu = menubar)
+fileMenu = Menu(menubar, tearoff=0, font=("MV Boli", 15))
+menubar.add_cascade(label="File", menu=fileMenu)
+fileMenu.add_command(label="Open", command=openFile, image=openImage, compound='left')
+fileMenu.add_command(label="Save", command=saveFile, image=saveImage, compound='left')
+fileMenu.add_separator()
+fileMenu.add_command(label="Exit", command=quit)
+editMenu = Menu(menubar,tearoff=0, font=("MV Boli", 15))
+menubar.add_cascade(label="Edit", menu=editMenu)
+editMenu.add_command(label="Cut", command=cut)
+editMenu.add_command(label="Copy", command=copy)
+editMenu.add_command(label="Paste", command=paste)
 button23 = Button(window, command=saveFile, text='save')
 button23.pack()
 
