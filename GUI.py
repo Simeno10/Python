@@ -114,6 +114,14 @@ openImage = PhotoImage(file='open.png')
 
 x=BooleanVar()
 
+frame=Frame(window, bg="pink", bd=5, relief=SUNKEN)
+frame.place(x=100, y=100)
+
+Button(frame, text="W", font=("Consolas", 25), width=3).pack(side=TOP)
+Button(frame, text="A", font=("Consolas", 25), width=3).pack(side=LEFT)
+Button(frame, text="S", font=("Consolas", 25), width=3).pack(side=LEFT)
+Button(frame, text="D", font=("Consolas", 25), width=3).pack(side=LEFT)
+
 menubar = Menu(window)
 window.config(menu = menubar)
 fileMenu = Menu(menubar, tearoff=0, font=("MV Boli", 15))
