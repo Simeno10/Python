@@ -104,6 +104,10 @@ def copy():
     print("You copied some text")
 def paste():
     print("You pasted some text")
+def create_window():
+    #new_window = Toplevel()
+    new_window = Tk()
+    window.destroy()
 
 
 window = Tk()
@@ -113,6 +117,8 @@ saveImage = PhotoImage(file='save.png')
 openImage = PhotoImage(file='open.png')
 
 x=BooleanVar()
+
+Button(window, text="create new window", command=create_window).pack()
 
 frame=Frame(window, bg="pink", bd=5, relief=SUNKEN)
 frame.place(x=100, y=100)
