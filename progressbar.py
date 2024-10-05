@@ -13,11 +13,18 @@ def start():
         percent.set(str(int((download/GB)*100))+"%")
         text.set(str(download)+"/"+str(GB)+" GB completed")
         window.update_idletasks()
+def dosth(event):
+    #print("You pressed "+event.keysym)
+    label.config(text=event.keysym)
 
 window = Tk()
 
 percent = StringVar()
 text = StringVar()
+
+window.bind("<Key>", dosth)
+label = Label(window, font=("Helvetica", 100))
+label.pack()
 
 canvas = Canvas(window, height=500, width=500)
 #blueLine = canvas.create_line(0,0,500,500, fill="blue", width=5)
