@@ -15,13 +15,15 @@ def start():
         window.update_idletasks()
 def dosth(event):
     #print("You pressed "+event.keysym)
-    label.config(text=event.keysym)
+    #label.config(text=event.keysym)
+    print("You pressed " + str(event.x)+","+str(event.y))
 
 window = Tk()
 
 percent = StringVar()
 text = StringVar()
 
+window.bind("<Motion>", dosth)
 window.bind("<Key>", dosth)
 label = Label(window, font=("Helvetica", 100))
 label.pack()
