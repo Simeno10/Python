@@ -17,8 +17,27 @@ def dosth(event):
     #print("You pressed "+event.keysym)
     #label.config(text=event.keysym)
     print("You pressed " + str(event.x)+","+str(event.y))
+def move_up(event):
+    canvas.move(myimage,0,-10)
+def move_down(event):
+    canvas.move(myimage,0,10)
+def move_left(event):
+    canvas.move(myimage,-10,0)
+def move_right(event):
+    canvas.move(myimage,10,0)
+
 
 window = Tk()
+
+window.bind("<w>", move_up)
+window.bind("<a>", move_left)
+window.bind("<d>", move_right)
+window.bind("<s>", move_down)
+
+window.bind("<Up>", move_up)
+window.bind("<Left>", move_left)
+window.bind("<Right>", move_right)
+window.bind("<Down>", move_down)
 
 percent = StringVar()
 text = StringVar()
@@ -39,6 +58,9 @@ canvas.create_arc(0,0,500,500,fill="red", extent=180, width=10)
 canvas.create_arc(0,0,500,500,fill="white", start=180, extent=180, width=10)
 canvas.create_oval(190,190,310,310, fill="white", width=10)
 canvas.pack()
+
+icon2 = PhotoImage(file='icon2.png')
+myimage = canvas.create_image(0,0,image=icon2, anchor=NW)
 
 bar = Progressbar(window, orient=HORIZONTAL, length=300)
 bar.pack(pady=10)
