@@ -1,4 +1,5 @@
 import random
+
 while True:
     wybory = ["kamień", "papier", "nożyce"]
 
