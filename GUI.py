@@ -9,6 +9,7 @@ def click():
     global count
     count += 1
     print("You clicked button! ",count)
+    
 def submit():
     name = entry.get()
     print("Hello "+name)
