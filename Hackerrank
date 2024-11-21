@@ -1,20 +1,11 @@
-i = 4
-d = 4.0
-s = 'HackerRank '
-j = int(input())
-e = float(input())
-t = input()
-print(i+j)
-print(d+e)
-print(s+t)
+def solve(meal_cost, tip_percent, tax_percent):
+    print (round(meal_cost+((meal_cost*tip_percent)/100)+((meal_cost*tax_percent)/100)))
 
-# Declare second integer, double, and String variables.
+if __name__ == '__main__':
+    meal_cost = float(input().strip())
 
-# Read and save an integer, double, and String to your variables.
+    tip_percent = int(input().strip())
 
-# Print the sum of both integer variables on a new line.
+    tax_percent = int(input().strip())
 
-# Print the sum of the double variables on a new line.
-
-# Concatenate and print the String variables on a new line
-# The 's' variable above should be printed first.
+    solve(meal_cost, tip_percent, tax_percent)
