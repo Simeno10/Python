@@ -1,15 +1,7 @@
-#!/bin/python3
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+n = int(input())
 
-import math
-import os
-import random
-import re
-import sys
-
-
-
-if __name__ == '__main__':
-    n = int(input().strip())
-    for i in range (10):
-        print(n,"x",i+1,"=",n*(i+1))
+for i in range (n):
+    x = input()
+    print(x[::2], x[1::2])
 
