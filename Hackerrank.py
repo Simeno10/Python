@@ -1,7 +1,16 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n = int(input())
+#!/bin/python3
 
-for i in range (n):
-    x = input()
-    print(x[::2], x[1::2])
+import math
+import os
+import random
+import re
+import sys
 
+
+
+if __name__ == '__main__':
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+    for i in range(n):
+        print(arr[n-1-i], end=" ")
