@@ -1,23 +1,31 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-n = int(input())
+#!/bin/python3
 
-thisdict = dict()
+import math
+import os
+import random
+import re
+import sys
 
-for i in range(n):
-    x = input()
-    thisdict[x.split()[0]] = x.split()[1]
-#print (thisdict)
+#
+# Complete the 'factorial' function below.
+#
+# The function is expected to return an INTEGER.
+# The function accepts INTEGER n as parameter.
+#
 
-y = input()
+def factorial(n):
+    if(n<=1):
+        return 1
+    else:
+        return n*factorial(n-1)
 
-try:
-    while (y):
-        if(thisdict.get(y) is not None):
-            print(str(y), end="")
-            print("=",end="")
-            print(thisdict.get(y))
-        else:
-            print("Not found")
-        y = input()
-except:
-    quit()
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    result = factorial(n)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
