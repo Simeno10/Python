@@ -6,26 +6,21 @@ import random
 import re
 import sys
 
-#
-# Complete the 'factorial' function below.
-#
-# The function is expected to return an INTEGER.
-# The function accepts INTEGER n as parameter.
-#
 
-def factorial(n):
-    if(n<=1):
-        return 1
-    else:
-        return n*factorial(n-1)
 
 if __name__ == '__main__':
-    fptr = open(os.environ['OUTPUT_PATH'], 'w')
-
     n = int(input().strip())
-
-    result = factorial(n)
-
-    fptr.write(str(result) + '\n')
-
-    fptr.close()
+    n = str(bin(n))
+    maxi = 0
+    count = 0
+    for i in range(len(n)):
+        if(n[i]=='1'):
+            count +=1
+        elif(maxi<count):
+            maxi = count
+            count = 0
+        else:
+            count = 0
+    if(maxi<count):
+        maxi = count
+    print(maxi)
