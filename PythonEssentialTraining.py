@@ -1,22 +1,9 @@
-# Python code​​​​​​‌‌​​​‌​‌‌‌‌‌‌​​‌​​​​‌​​​‌ below
-
-def encodeString(stringVal):
-    count = 1
-    myList = []
-    for i in range(len(stringVal)-1):
-        if (stringVal[i]==stringVal[i+1]):
-            count += 1
+def allPrimesUpTo(num):
+    primesFound = []
+    for factor in range(2, num):
+        for i in primesFound:
+            if factor % i == 0:
+                break
         else:
-            myList.append((stringVal[i], count))
-            count = 1
-    myList.append((stringVal[-1], count))
-    count = 1
-    return myList
-
-
-def decodeString(encodedList):
-    word = ''
-    for i in encodedList:
-        for j in range (i[1]):
-            word+=i[0]
-    return word
+            primesFound.append(factor)
+    return primesFound
