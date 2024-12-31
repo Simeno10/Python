@@ -1,22 +1,14 @@
-# Python code​​​​​​‌‌​​​‌‌​​‌​​​​​​​​​‌‌​‌​​ below
-class Shape:
-	width = 5
-	height = 5
-	printChar = '#'
+# Python code​​​​​​‌‌​​​‌‌​​‌​​​​‌​​‌‌​‌​​‌​ below
+class NonIntArgumentException(Exception):
+    pass
 
-	def printRow(self, i):
-		raise NotImplementedError("Will be implemented by children extending this class")
-
-	def print(self):
-		for i in range(self.height):
-			self.printRow(i)
-
-
-class Square(Shape):
-	def printRow(self, i):
-		print(self.printChar * self.width)
-
-class Triangle(Shape):
-	def print(self):
-		for i in range(self.height):
-			print(self.printChar * (self.height-i))
+def handleNonIntArguments(func):
+    def wrapper(*args):
+        try:
+            for i in args:
+                if(type(i) is not int):
+                    raise NonIntArgumentException("NonIntArgumentException")
+            return func(*args)
+        except TypeError:
+            print('There was a type error!')
+    return wrapper
