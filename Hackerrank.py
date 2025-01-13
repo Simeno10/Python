@@ -1,15 +1,21 @@
-#!/bin/python3
+#Write your code here
+class Calculator:
+    def __init__(self):
+        pass
+    def power(self,n,p):
+        if(n < 0 or p < 0):
+            return "n and p should be non-negative"
+        sum = 1
+        for i in range(p):
+            sum = sum * n
+        return sum
 
-import math
-import os
-import random
-import re
-import sys
-
-
-
-S = input()
-try:
-    print(int(S))
-except ValueError:
-    print("Bad String")
+myCalculator=Calculator()
+T=int(input())
+for i in range(T):
+    n,p = map(int, input().split())
+    try:
+        ans=myCalculator.power(n,p)
+        print(ans)
+    except Exception as e:
+        print(e)
