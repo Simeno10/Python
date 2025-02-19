@@ -1,44 +1,48 @@
-import sys
-
 class Node:
     def __init__(self,data):
-        self.right=self.left=None
         self.data = data
-class Solution:
-    def insert(self,root,data):
-        if root==None:
-            return Node(data)
-        else:
-            if data<=root.data:
-                cur=self.insert(root.left,data)
-                root.left=cur
+        self.next = None 
+class Solution: 
+    def insert(self,head,data):
+            p = Node(data)           
+            if head==None:
+                head=p
+            elif head.next==None:
+                head.next=p
             else:
-                cur=self.insert(root.right,data)
-                root.right=cur
-        return root
+                start=head
+                while(start.next!=None):
+                    start=start.next
+                start.next=p
+            return head  
+    def display(self,head):
+        current = head
+        while current:
+            print(current.data,end=' ')
+            current = current.next
 
-    def levelOrder(self,root):
-        if root is None:
-            return
+    def removeDuplicates(self,head):
+        if not head:
+            return head
+    
+        seen = set()
+        current = head
+        seen.add(current.data)
+    
+        while current.next:
+            if current.next.data in seen:
+                current.next = current.next.next
+            else:
+                seen.add(current.next.data)
+                current = current.next
+    
+        return head
 
-        queue = [root]  
-
-        while queue:
-            current = queue.pop(0)  
-            print(current.data, end=" ")
-
-            if current.left:  
-                queue.append(current.left)
-            if current.right:  
-                queue.append(current.right)
-            
-            
-
-
+mylist= Solution()
 T=int(input())
-myTree=Solution()
-root=None
+head=None
 for i in range(T):
     data=int(input())
-    root=myTree.insert(root,data)
-myTree.levelOrder(root)
+    head=mylist.insert(head,data)    
+head=mylist.removeDuplicates(head)
+mylist.display(head); 
