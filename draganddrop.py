@@ -48,3 +48,4 @@ label2.bind("<Button-1>", drag_start)
 label2.bind("<B1-Motion>", drag_motion)
 
 window.mainloop()
+
