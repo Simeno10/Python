@@ -1,24 +1,22 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
+#!/bin/python3
+
+import math
+import os
+import random
+import re
 import sys
 
-def calculate_fine(returned_date, due_date):
-    ret_day, ret_month, ret_year = map(int, returned_date)
-    due_day, due_month, due_year = map(int, due_date)
-    
-    if (ret_year, ret_month, ret_day) <= (due_year, due_month, due_day):
-        return 0
-    elif ret_year > due_year:
-        return 10000
-    elif ret_month > due_month and ret_year == due_year:
-        return 500 * (ret_month - due_month)
-    else:
-        return 15 * (ret_day - due_day)
 
-if __name__ == "__main__":
-    lines = sys.stdin.read().strip().split("\n")
+
+if __name__ == '__main__':
+    N = int(input().strip())
+    gmail_users = []
     
-    returned_date = lines[0].split()
-    due_date = lines[1].split()
+    for _ in range(N):
+        firstName, emailID = input().rstrip().split()
+        
+        if emailID.endswith("@gmail.com"):
+            gmail_users.append(firstName)
     
-    fine = calculate_fine(returned_date, due_date)
-    print(fine)
+    for name in sorted(gmail_users):
+        print(name)
