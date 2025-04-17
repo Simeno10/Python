@@ -4,7 +4,6 @@ from tkinter import colorchooser
 from tkinter import filedialog
 from tkinter import ttk
 
-
 count = 0
 def click():
     global count
