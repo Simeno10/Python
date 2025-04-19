@@ -9,7 +9,6 @@ class Vehicle(ABC):
     def stop(self):
         pass
 
-
 class Car(Vehicle):
 
     wheels = 4  #class variable
