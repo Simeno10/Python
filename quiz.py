@@ -3,6 +3,7 @@ def new_game():
     correct_guesses=0
     question_num=1
 
+
     for key in questions:
         print("-----------------------")
         print(key)
