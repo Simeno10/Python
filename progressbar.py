@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter.ttk import *
 import time
 
+
 def start():
     GB = 200
     download = 0
