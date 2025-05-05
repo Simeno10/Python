@@ -1,5 +1,6 @@
 import random
 
+
 while True:
     wybory = ["kamień", "papier", "nożyce"]
     komputer = random.choice(wybory)
