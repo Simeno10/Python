@@ -2,6 +2,7 @@ from tkinter import *
 from time import *
 import smtplib
 
+
 def update():
     time_string = strftime("%I:%M:%S %p")
     time_label.config(text=time_string)
