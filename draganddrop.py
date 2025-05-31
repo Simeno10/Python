@@ -1,5 +1,6 @@
 from tkinter import *
 
+
 def drag_start(event):
     widget = event.widget
     widget.startX = event.x
