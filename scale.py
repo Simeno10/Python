@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def submit():
     print("The temperature is "+ str(scale.get())+" degrees C")
 
