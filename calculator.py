@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def button_press(num):
     global equation_text
     if(equation_text!='0'):
