@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 count = 0
 def click():
     global count
