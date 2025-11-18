@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 window = Tk()
 
 titleLabel = Label(window, text="Enter your info", font=("Arial", 25)).grid(row=0, column=0, columnspan=2)
