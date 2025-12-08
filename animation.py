@@ -12,7 +12,6 @@ window = Tk()
 canvas = Canvas(window, width=WIDTH, height=HEIGHT)
 canvas.pack()
 
-
 bgImage = PhotoImage(file='space.png')
 bg = canvas.create_image(0,0,image=bgImage, anchor=NW)
 
