@@ -2,6 +2,7 @@ from tkinter import *
 from ball import *
 import time
 
+
 WIDTH = 900
 HEIGHT = 500
 xVelocity = 1.5
