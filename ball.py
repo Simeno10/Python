@@ -13,4 +13,3 @@ class Ball:
 
         self.canvas.move(self.image, self.xVelocity, self.yVelocity)
         
-        
