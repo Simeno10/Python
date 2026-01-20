@@ -31,3 +31,4 @@ def decodeFile(filename):
     with open(filename) as f:
         data = f.read()
     return decodeString(json.loads(data))
+
