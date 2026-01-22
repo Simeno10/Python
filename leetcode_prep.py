@@ -1,23 +1,15 @@
 class Solution(object):
-    def isValid(self, s):
-        a = []
-        n = len(s)
-        for i in s:
-            if (i=='(' or i == '{' or i == '['):
-                a.append(i)
-            else:
-                if not a:
-                    return False
-                b = a.pop()
-                if (i == ')' and b != '('):
-                    return False
-                if (i == ']' and b != '['):
-                    return False
-                if (i == '}' and b != '{'):
-                    return False
-        return len(a)==0
+    def twoSum(self, nums, target):
+
+        n = len(nums)
+        for i in range(n-1):
+            for j in range(i+1, n):
+                if(nums[i] + nums[j] == target):
+                    return (i, j)
         """
-        :type s: str
-        :rtype: bool
+        :type nums: List[int]
+        :type target: int
+        :rtype: List[int]
         """
+        
         
