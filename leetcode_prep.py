@@ -1,5 +1,14 @@
+# Definition for a binary tree node.
+# class TreeNode(object):
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
 class Solution(object):
-    def isPalindrome(self, s):
-        word = s = ''.join(e for e in s if e.isalnum()).lower()
-        word = word[::-1]
-        return word == s
+    def invertTree(self, root):
+        if root is None:
+            return root
+        self.invertTree(root.left)
+        self.invertTree(root.right)
+        root.left, root.right = root.right, root.left
+        return root
