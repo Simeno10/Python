@@ -1,19 +1,10 @@
-# Definition for a binary tree node.
-# class TreeNode(object):
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
-
 class Solution(object):
-    def lowestCommonAncestor(self, root, p, q):
-        big = max(p.val, q.val)
-        small = min(p.val, q.val)
-        while root:
-            if root.val>big:
-                root = root.left
-            elif root.val<small:
-                root = root.right
-            else:
-                return root
-        return False
+    def maxSubArray(self, nums):
+        res = nums[0]
+        total = 0
+        for i in nums:
+            if total<0:
+                total = 0
+            total += i
+            res = max(res,total)
+        return res
