@@ -1,13 +1,5 @@
 class Solution(object):
-    def maxProfit(self, prices):
-        maxi = mini = profit = 0
-        for i in range (len(prices)):
-            if i == 0:
-                maxi = mini = prices [i]
-            elif mini>prices[i]:
-                mini = maxi = prices[i]
-            elif maxi< prices[i]:
-                maxi = prices [i]
-                if maxi - mini > profit:
-                    profit = maxi - mini
-        return profit
+    def isPalindrome(self, s):
+        word = s = ''.join(e for e in s if e.isalnum()).lower()
+        word = word[::-1]
+        return word == s
