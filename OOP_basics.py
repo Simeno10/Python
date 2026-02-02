@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 count = 0
 def click():
     global count
@@ -118,3 +117,4 @@ window.iconphoto(True,icon)
 window.config(background="#4275f5")
 
 window.mainloop()
+
