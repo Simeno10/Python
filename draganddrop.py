@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 def drag_start(event):
     widget = event.widget
     widget.startX = event.x
@@ -49,4 +48,5 @@ label2.bind("<Button-1>", drag_start)
 label2.bind("<B1-Motion>", drag_motion)
 
 window.mainloop()
+
 
