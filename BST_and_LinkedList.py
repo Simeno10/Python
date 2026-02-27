@@ -64,7 +64,6 @@ class BST:
                     break
                 current = current.right
 
-
 ll = LinkedList()
 ll.add_value(5)
 ll.add_value(6)
