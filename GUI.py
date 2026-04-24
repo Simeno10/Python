@@ -111,7 +111,6 @@ def create_window():
     new_window = Tk()
     window.destroy()
 
-
 window = Tk()
 icon = PhotoImage(file='icon.png')
 icon2 = PhotoImage(file='icon2.png')
