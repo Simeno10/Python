@@ -1,25 +1,53 @@
-class Employee:
-    def __init__(self, name, age, salary):
-        self.name = name
-        self.age = age
-        self.salary = salary
+import matplotlib.pyplot as plt
+import numpy as np
 
-employee_list = []
+def initial_plot():
+    plt.plot([1, 2, 3, 4], [1, 4, 9, 16])
+    plt.show()
 
-employee_list.append(Employee("John", 23, 50000))
-employee_list.append(Employee("Mike", 45, 60000))
-employee_list.append(Employee("Lisa", 33, 90000))
-employee_list.append(Employee("Elon", 50, 100000))
-employee_list.append(Employee("Jeff", 60, 120000))
-employee_list.append(Employee("Bill", 70, 150000))
+def plot_cosinus_with_labels():
+    x = np.linspace(0, 10, 100)
+    y = np.cos(x)
+    plt.plot(x, y)
+    plt.xlabel('x')
+    plt.ylabel('cos(x)')
+    plt.title('Cosinus function')
+    plt.show()
 
-def get_all_employees_names():
-    return [employee.name for employee in employee_list]
+def plot_cosinus_and_sinus():
+    x = np.linspace(0, 10, 100)
+    y1 = np.cos(x)
+    y2 = np.sin(x)
+    plt.plot(x, y1, label='cos(x)')
+    plt.plot(x, y2, label='sin(x)', linestyle='--')
+    plt.xlabel('x')
+    plt.ylabel('y')
+    plt.title('Cosinus and Sinus functions')
+    plt.legend()
+    plt.show()
 
-def get_maximum_salary():
-    return max([employee.salary for employee in employee_list])
+def plot_world_population():
 
-def get_employees_with_salary_bigger_than(salary):
-    return [employee.name for employee in employee_list if employee.salary > salary]
+    # world population data
+    year = np.array([1950, 1960, 1970, 1980, 1990, 2000, 2010])
+    population = np.array([2.5, 3, 3.7, 4.4, 5.3, 6.1, 7])
 
-print(get_employees_with_salary_bigger_than(100000))
+    # plot
+    plt.plot(year, population, color='green', marker='o', linestyle='solid')
+    plt.xlabel('Year')
+    plt.ylabel('Population')
+    plt.title('World population over time')
+    plt.show()
+
+def plot_programming_languages():
+    # programming languages data
+    languages = ['Python', 'Java', 'JavaScript', 'C++', 'C#']
+    usage = [30, 25, 20, 15, 10]
+
+    # plot
+    plt.pie(usage, labels=languages, autopct='%1.1f%%')
+    plt.title('Usage of Programming Languages')
+    plt.show()
+
+
+plot_programming_languages()
