@@ -36,3 +36,4 @@ while True:
     if play_again != "tak":
         break
 print("Narazie!")
+
