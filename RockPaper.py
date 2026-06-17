@@ -1,5 +1,6 @@
 import random
 
+
 while True:
     wybory = ["kamień", "papier", "nożyce"]
     komputer = random.choice(wybory)
@@ -36,4 +37,3 @@ while True:
     if play_again != "tak":
         break
 print("Narazie!")
-
