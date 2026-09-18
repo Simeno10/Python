@@ -272,7 +272,6 @@ window.title("Yoooo first GUI")
 #label.pack()
 #label.place(x=210, y=210)
 
-
 window.iconphoto(True,icon)
 window.config(background="#4275f5")
 
