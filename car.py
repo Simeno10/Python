@@ -45,3 +45,4 @@ class Motorcycle(Vehicle):
 
     def stop(self):
         print("This motorcycle is stopped.")
+
