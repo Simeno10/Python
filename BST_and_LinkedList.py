@@ -77,3 +77,4 @@ bst.insert(5)
 bst.insert(4)
 bst.insert(6)
 print(bst.root.left.value)
+
