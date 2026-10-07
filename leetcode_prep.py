@@ -1,10 +1,8 @@
-class Solution(object):
-    def maxSubArray(self, nums):
-        res = nums[0]
-        total = 0
-        for i in nums:
-            if total<0:
-                total = 0
-            total += i
-            res = max(res,total)
-        return res
+class Solution:
+    def invertTree(self, root: TreeNode | None) -> TreeNode | None:
+        if root is None:
+            return None
+        root.left, root.right = root.right, root.left
+        self.invertTree(root.right)
+        self.invertTree(root.left)
+        return root
