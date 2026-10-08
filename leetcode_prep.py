@@ -1,8 +1,17 @@
 class Solution:
-    def invertTree(self, root: TreeNode | None) -> TreeNode | None:
-        if root is None:
-            return None
-        root.left, root.right = root.right, root.left
-        self.invertTree(root.right)
-        self.invertTree(root.left)
-        return root
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t): 
+            return False
+        counter = {}
+        for i in s:
+            if i in counter:
+                counter[i] += 1
+            else:
+                counter[i] = 1
+        for j in t:
+            if j not in counter:
+                return False
+            counter[j] -= 1
+            if counter[j] < 0:
+                return False
+        return True
