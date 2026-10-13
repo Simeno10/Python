@@ -76,4 +76,3 @@ clear = Button(window, text='clear', height=4, width=12, font=35, command=clear)
 clear.pack()
 
 window.mainloop()
-
