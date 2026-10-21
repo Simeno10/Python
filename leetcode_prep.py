@@ -57,3 +57,16 @@ class MyQueue:
         if len(self.in_stack) == 0 and len(self.out_stack) == 0:
             return True
         else: return False
+
+class Solution3:
+    def firstBadVersion(self, n: int) -> int:
+        left = 1 
+        right = n
+        while left < right:
+            mid = (left + right) // 2    
+            if isBadVersion(mid) is True:
+                right = mid
+            else:
+                left = mid + 1
+        return left
+        
