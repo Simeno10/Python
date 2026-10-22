@@ -70,3 +70,18 @@ class Solution3:
                 left = mid + 1
         return left
         
+class Solution4:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        if len(ransomNote) > len(magazine):
+            return False
+        dict1 = {}
+        for char in magazine:
+            if char not in dict1:
+                dict1[char] = 1
+            else:
+                dict1[char] += 1
+        for char in ransomNote:
+            if char not in dict1 or dict1[char] < 1:
+                return False
+            dict1[char] -= 1
+        return True
