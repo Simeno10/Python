@@ -85,3 +85,18 @@ class Solution4:
                 return False
             dict1[char] -= 1
         return True
+
+def sum(numbers):
+    result = []
+    for i in numbers:
+        temp = int(i)
+        temp = temp//10%10
+        if(temp %2 == 0):
+            result.append(i)
+    return result
+
+
+numbers = [67425833822, 6573214813, 4257854862, 7584254817, 7742854185, 58425845852, 67425833842, "12345", 987, 246]
+
+
+print(sum(numbers))
