@@ -112,3 +112,23 @@ class Solution5:
         for _ in range(n - 2):
             a, b = b, a + b
         return b
+
+class Solution6:
+    def longestPalindrome(self, s: str) -> int:
+        size = 0
+        count = {}
+        if len(s) == 1:
+            return 1
+        for i in s:
+            if i not in count:
+                count[i] = 1
+            else:
+                count[i] += 1
+        odd = False
+        for i in count:
+            size +=  count[i]//2*2
+            if count[i] % 2 != 0:
+                odd = True
+        if odd:
+            size +=1
+        return size
